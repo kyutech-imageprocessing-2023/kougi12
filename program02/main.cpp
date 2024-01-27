@@ -21,8 +21,9 @@ int main(int argc, char* argv[]){
 
   cv::Mat src = cv::imread(argv[1], 0);
 
-  std::vector<cv::KeyPoint> keypoints;
   cv::Ptr<cv::SIFT> detector = cv::SiftFeatureDetector::create();
+
+  std::vector<cv::KeyPoint> keypoints;
   detector->detect(src, keypoints);
 
 	// キーポイントの数を表示
